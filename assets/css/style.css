@@ -1,18 +1,24 @@
-.background-orange {
-  background: #ff8270;
+.use-orange {
+  background: #d34f3c;
+  color: #d34f3c;
 }
 
-.background-blue {
-  background: #007b8a;
+.use-pink {
+  background: #c43d5c;
+  color: #c43d5c;
 }
 
-.background-gray {
-  background: #171d1d;
+.use-blue {
+  background: #0b6772;
+  color: #0b6772;
 }
 
-html, body, .content {
+html, body {
   width: 100%;
   height: 100%;
+}
+
+html, body, h1, h3, p, a {
   margin: 0;
   padding: 0;
 }
@@ -21,15 +27,48 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.content {
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.screen, .navigation {
+  display: inline-block;
+}
+
+.screen {
+  background-color: #171d1d;
+  height: 50vh;
+  width: 50vh;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.navigation {
+  color: #171d1d;
+  font-weight: bold;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.navigation p {
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

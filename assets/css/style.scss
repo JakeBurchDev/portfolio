@@ -1,36 +1,69 @@
 // colors
-$orange: #ff8270;
+$orange: #d34f3c;
 $pink: #c43d5c;
-$blue: #007b8a;
+$blue: #0b6772;
 $gray: #171d1d;
 
 // color utilities
-.background-orange {
+.use-orange {
     background: $orange;
+    color: $orange;
 }
 
-.background-blue {
+.use-pink {
+    background: $pink;
+    color: $pink;
+}
+
+.use-blue {
     background: $blue;
+    color: $blue;
 }
 
-.background-gray {
-    background: $gray;
-}
+// elements
 
-html, body, .content {
+html, body {
     width: 100%;
     height: 100%;
+}
+
+html, body, h1, h3, p, a {
     margin: 0;
     padding: 0;
 }
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .content {
+    height: 50vh;
+    display: flex;
+    align-items: flex-start;
+}
 
+.screen, .navigation {
+    display: inline-block;
+}
+
+.screen {
+    background-color: $gray;
+    height: 50vh;
+    width: 50vh;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.navigation {
+    color: $gray;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 2rem;
+
+    p {
+        margin-bottom: 1rem;
+    }
 }

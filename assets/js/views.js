@@ -4,12 +4,14 @@ const views = {
         'orange',
         [[
             new Tag(
+                'h3',
+                `Hi, I'm Jake!`
+            ),
+            new Tag(
                 'p', 
-                `Hi, I'm Jake! I am an Indianapolis-based Full Stack Developer. 
+                `I am an Indianapolis-based Full Stack Developer. 
                 I'm passionate about Javascript and User Experience Design.`
             ),
-            new Tag('br', ''),
-            new Tag('br', ''),
             new Tag(
                 'p', 
                 `I'd love to hear from you! 
@@ -28,8 +30,6 @@ const views = {
                 of web and mobile applications using technologies such as 
                 Angular, .NET Core, SQL Server, and more.`
             ),
-            new Tag('br', ''),
-            new Tag('br', ''),
             new Tag(
                 'h3',
                 'Butler University Executive Education'
@@ -46,9 +46,7 @@ const views = {
         'mystery',
         'blue',
         [[
-            new Tag('p', 'Shall we play a game?'),
-            new Tag('br', ''),
-            new Tag('br', ''),
+            new Tag('h3', 'Shall we play a game?'),
             new Tag('p', 'Tic-Tac-Toe', 'prompt-option game-tic-tac-toe'),
             new Tag('p', 'Janken', 'prompt-option game-tic-tac-toe'),
             new Tag('p', 'Global Thermonuclear War', 'prompt-option game-war'),

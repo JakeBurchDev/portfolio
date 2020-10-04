@@ -28,6 +28,8 @@ h1, h3, p, a {
     transform: scaleX(1.5);
     transform-origin: left;
     color: $gray;
+    margin-bottom: .5rem;
+    width: 65%;
 }
 
 p, a {
@@ -44,8 +46,12 @@ a {
     background-position: 0% 0%;
 
     .screen {
-        h1, h3, p, a, a:hover, a:visited {
+        h1, h3, p, a, a:visited {
             color: $orange;
+        }
+
+        a:hover, .prompt-option:hover {
+            color: $pink;
         }
     }
 
@@ -58,8 +64,12 @@ a {
     background-position: 50% 50%;
     
     .screen {
-        h1, h3, p, a, a:hover, a:visited {
+        h1, h3, p, a, a:visited {
             color: $pink;
+        }
+
+        a:hover, .prompt-option:hover {
+            color: $blue;
         }
     }
 
@@ -72,8 +82,12 @@ a {
     background-position: 100% 100%;
 
     .screen {
-        h1, h3, p, a, a:hover, a:visited {
+        h1, h3, p, a, a:visited {
             color: $blue;
+        }
+
+        a:hover, .prompt-option:hover {
+            color: $orange;
         }
     }
 
@@ -85,27 +99,31 @@ a {
 body {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .content {
-    height: 65vh;
     display: flex;
-    align-items: center;
-}
-
-.screen, .navigation {
-    display: inline-block;
+    align-items: stretch;
+    width: 100%;
+    padding: 4rem;
 }
 
 .screen {
+    flex: 1;
     background-color: $gray;
-    height: 65vh;
-    width: 65vh;
     padding: 2rem;
     border-radius: 2rem;
     box-shadow: 2px 5px 10px rgba(0,0,0, .7);
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            font-size: 1rem;
+        }
+    }
 }
 
 .contact-row {
@@ -123,6 +141,7 @@ body {
     font-weight: bold;
     margin-left: 2rem;
     align-self: flex-start;
+    margin-top: 2rem;
 
     h3 {
         cursor: pointer;
@@ -150,7 +169,6 @@ body {
 }
 
 .prompt-option {
-    display: block;
     cursor: pointer;
 }
 

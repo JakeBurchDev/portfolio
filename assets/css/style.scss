@@ -16,6 +16,10 @@ html, body, h1, h3, p, a {
     padding: 0;
 }
 
+body {
+    transition: 200ms ease-in-out all;
+}
+
 h1, h3, p, a {
     font-family: 'VT323', monospace;
     transform: scaleX(1.5);

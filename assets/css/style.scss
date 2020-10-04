@@ -6,17 +6,17 @@ $gray: #171d1d;
 
 // color utilities
 .use-orange {
-    background: $orange;
+    background-image: linear-gradient(to bottom right, $orange, $pink);
     color: $orange;
 }
 
 .use-pink {
-    background: $pink;
+    background-image: linear-gradient(to bottom right, $pink, $blue);
     color: $pink;
 }
 
 .use-blue {
-    background: $blue;
+    background-image: linear-gradient(to bottom right, $blue, $orange);
     color: $blue;
 }
 

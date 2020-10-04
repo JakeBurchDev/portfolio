@@ -1,15 +1,18 @@
 .use-orange {
-  background: #d34f3c;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d34f3c), to(#c43d5c));
+  background-image: linear-gradient(to bottom right, #d34f3c, #c43d5c);
   color: #d34f3c;
 }
 
 .use-pink {
-  background: #c43d5c;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#c43d5c), to(#0b6772));
+  background-image: linear-gradient(to bottom right, #c43d5c, #0b6772);
   color: #c43d5c;
 }
 
 .use-blue {
-  background: #0b6772;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#0b6772), to(#d34f3c));
+  background-image: linear-gradient(to bottom right, #0b6772, #d34f3c);
   color: #0b6772;
 }
 

@@ -107,6 +107,8 @@ body {
   width: 65vh;
   padding: 2rem;
   border-radius: 2rem;
+  -webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.7);
+          box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.7);
 }
 
 .contact-row {

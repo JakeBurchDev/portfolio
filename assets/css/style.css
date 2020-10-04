@@ -12,7 +12,7 @@ html, body, h1, h3, p, a {
 body {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#d34f3c), color-stop(#c43d5c), color-stop(#0b6772), to(#d34f3c));
   background-image: linear-gradient(to bottom right, #d34f3c, #c43d5c, #0b6772, #d34f3c);
-  background-size: 400% 400%;
+  background-size: 300% 300%;
   -webkit-transition: 500ms ease-in-out all;
   transition: 500ms ease-in-out all;
 }

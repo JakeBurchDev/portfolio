@@ -76,26 +76,26 @@ body {
   margin-top: 2rem;
 }
 
-.navigation p {
+.navigation h3 {
   cursor: pointer;
   margin-bottom: 1rem;
 }
 
-.navigation p span {
+.navigation h3 span {
   border-bottom: 3px solid rgba(0, 0, 0, 0);
   padding-bottom: .5rem;
 }
 
-.navigation p:hover span {
+.navigation h3:hover span {
   border-color: #171d1d;
 }
 
-.navigation p::before {
+.navigation h3::before {
   content: '\00a0';
   margin-right: .5rem;
 }
 
-.navigation p.active::before {
+.navigation h3.active::before {
   content: '>';
 }
 /*# sourceMappingURL=style.css.map */

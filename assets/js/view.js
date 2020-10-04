@@ -11,5 +11,8 @@ class View {
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`[data-section="${this.sectionName}"]`).classList.add('active');
     }
-    
+
+    printMessage() {
+        
+    }
 }

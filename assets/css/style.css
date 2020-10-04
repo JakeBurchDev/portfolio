@@ -10,8 +10,11 @@ html, body, h1, h3, p, a {
 }
 
 body {
-  -webkit-transition: 200ms ease-in-out all;
-  transition: 200ms ease-in-out all;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d34f3c), color-stop(#c43d5c), color-stop(#0b6772), to(#d34f3c));
+  background-image: linear-gradient(to bottom right, #d34f3c, #c43d5c, #0b6772, #d34f3c);
+  background-size: 400% 400%;
+  -webkit-transition: 500ms ease-in-out all;
+  transition: 500ms ease-in-out all;
 }
 
 h1, h3, p, a {
@@ -33,8 +36,7 @@ a {
 }
 
 .use-orange {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#d34f3c), to(#c43d5c));
-  background-image: linear-gradient(to bottom right, #d34f3c, #c43d5c);
+  background-position: 0% 0%;
 }
 
 .use-orange .screen h1, .use-orange .screen h3, .use-orange .screen p, .use-orange .screen a, .use-orange .screen a:hover, .use-orange .screen a:visited {
@@ -46,8 +48,7 @@ a {
 }
 
 .use-pink {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#c43d5c), to(#0b6772));
-  background-image: linear-gradient(to bottom right, #c43d5c, #0b6772);
+  background-position: 50% 50%;
 }
 
 .use-pink .screen h1, .use-pink .screen h3, .use-pink .screen p, .use-pink .screen a, .use-pink .screen a:hover, .use-pink .screen a:visited {
@@ -59,8 +60,7 @@ a {
 }
 
 .use-blue {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#0b6772), to(#d34f3c));
-  background-image: linear-gradient(to bottom right, #0b6772, #d34f3c);
+  background-position: 100% 100%;
 }
 
 .use-blue .screen h1, .use-blue .screen h3, .use-blue .screen p, .use-blue .screen a, .use-blue .screen a:hover, .use-blue .screen a:visited {

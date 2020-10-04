@@ -18,7 +18,9 @@ html, body, h1, h3, p, a {
 }
 
 body {
-    transition: 200ms ease-in-out all;
+    background-image: linear-gradient(to bottom right, $orange, $pink, $blue, $orange);
+    background-size: 400% 400%;
+    transition: 500ms ease-in-out all;
 }
 
 h1, h3, p, a {
@@ -39,7 +41,7 @@ a {
 
 // color utilities
 .use-orange {
-    background-image: linear-gradient(to bottom right, $orange, $pink);
+    background-position: 0% 0%;
 
     .screen {
         h1, h3, p, a, a:hover, a:visited {
@@ -53,7 +55,7 @@ a {
 }
 
 .use-pink {
-    background-image: linear-gradient(to bottom right, $pink, $blue);
+    background-position: 50% 50%;
     
     .screen {
         h1, h3, p, a, a:hover, a:visited {
@@ -67,7 +69,7 @@ a {
 }
 
 .use-blue {
-    background-image: linear-gradient(to bottom right, $blue, $orange);
+    background-position: 100% 100%;
 
     .screen {
         h1, h3, p, a, a:hover, a:visited {

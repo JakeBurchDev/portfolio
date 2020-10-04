@@ -2,26 +2,40 @@ const views = {
     introduction: new View(
         'introduction',
         'orange',
-        `<p>
-            Hi, I'm Jake! I am an Indianapolis-based Full Stack Developer. 
-            I'm passionate about Javascript and User Experience Design.
-        </p>
-        <br>
-        <br>
-        <p>
-            I'd love to hear from you! 
-            You can reach me at one of the links above.
-        </p>`
+        [
+            new Tag(
+                'p', 
+                `Hi, I'm Jake! I am an Indianapolis-based Full Stack Developer. 
+                I'm passionate about Javascript and User Experience Design.`
+            ),
+            new Tag('br', ''),
+            new Tag('br', ''),
+            new Tag(
+                'p', 
+                `I'd love to hear from you! 
+                You can reach me at one of the links above.`
+            )
+        ]
     ),
     work: new View(
         'work',
         'pink',
-        '<p>Hello there</p>'
+        [
+            new Tag(
+                'p', 
+                `Hello there!`
+            )
+        ]
     ),
     mystery: new View(
         'mystery',
         'blue',
-        '<p>wee snaw</p>'
+        [
+            new Tag(
+                'p', 
+                `Oi gigi`
+            )
+        ]
     )
 };
 

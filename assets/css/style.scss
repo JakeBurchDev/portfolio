@@ -4,22 +4,6 @@ $pink: #c43d5c;
 $blue: #0b6772;
 $gray: #171d1d;
 
-// color utilities
-.use-orange {
-    background-image: linear-gradient(to bottom right, $orange, $pink);
-    color: $orange;
-}
-
-.use-pink {
-    background-image: linear-gradient(to bottom right, $pink, $blue);
-    color: $pink;
-}
-
-.use-blue {
-    background-image: linear-gradient(to bottom right, $blue, $orange);
-    color: $blue;
-}
-
 // elements
 
 html, body {
@@ -36,6 +20,59 @@ h1, h3, p, a {
     font-family: 'VT323', monospace;
     transform: scaleX(1.5);
     transform-origin: left;
+    color: $gray;
+}
+
+p, a {
+    font-size: 1.25rem;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
+
+// color utilities
+.use-orange {
+    background-image: linear-gradient(to bottom right, $orange, $pink);
+
+    .screen {
+        h1, h3, p, a, a:hover, a:visited {
+            color: $orange;
+        }
+    }
+
+    .contact-row {
+        border-color: $orange;
+    }
+}
+
+.use-pink {
+    background-image: linear-gradient(to bottom right, $pink, $blue);
+    
+    .screen {
+        h1, h3, p, a, a:hover, a:visited {
+            color: $pink;
+        }
+    }
+
+    .contact-row {
+        border-color: $pink;
+    }
+}
+
+.use-blue {
+    background-image: linear-gradient(to bottom right, $blue, $orange);
+
+    .screen {
+        h1, h3, p, a, a:hover, a:visited {
+            color: $blue;
+        }
+    }
+
+    .contact-row {
+        border-color: $blue;
+    }
 }
 
 body {
@@ -63,6 +100,16 @@ body {
     border-radius: 2rem;
 }
 
+.contact-row {
+    margin: .5rem 0 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 3px dashed;
+
+    a {
+        margin-right: .5rem;
+    }
+}
+
 .navigation {
     color: $gray;
     font-weight: bold;
@@ -75,11 +122,12 @@ body {
 
         span {
             border-bottom: 3px solid rgba(0,0,0,0);
-            padding-bottom: .5rem;
+            padding-bottom: .25rem;
         }
 
         &:hover span {
             border-color: $gray;
+            border-bottom-style: dashed;
         }
 
         &::before {

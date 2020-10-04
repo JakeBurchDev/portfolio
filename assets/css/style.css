@@ -1,21 +1,3 @@
-.use-orange {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#d34f3c), to(#c43d5c));
-  background-image: linear-gradient(to bottom right, #d34f3c, #c43d5c);
-  color: #d34f3c;
-}
-
-.use-pink {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#c43d5c), to(#0b6772));
-  background-image: linear-gradient(to bottom right, #c43d5c, #0b6772);
-  color: #c43d5c;
-}
-
-.use-blue {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#0b6772), to(#d34f3c));
-  background-image: linear-gradient(to bottom right, #0b6772, #d34f3c);
-  color: #0b6772;
-}
-
 html, body {
   width: 100%;
   height: 100%;
@@ -32,6 +14,55 @@ h1, h3, p, a {
           transform: scaleX(1.5);
   -webkit-transform-origin: left;
           transform-origin: left;
+  color: #171d1d;
+}
+
+p, a {
+  font-size: 1.25rem;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.use-orange {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d34f3c), to(#c43d5c));
+  background-image: linear-gradient(to bottom right, #d34f3c, #c43d5c);
+}
+
+.use-orange .screen h1, .use-orange .screen h3, .use-orange .screen p, .use-orange .screen a, .use-orange .screen a:hover, .use-orange .screen a:visited {
+  color: #d34f3c;
+}
+
+.use-orange .contact-row {
+  border-color: #d34f3c;
+}
+
+.use-pink {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#c43d5c), to(#0b6772));
+  background-image: linear-gradient(to bottom right, #c43d5c, #0b6772);
+}
+
+.use-pink .screen h1, .use-pink .screen h3, .use-pink .screen p, .use-pink .screen a, .use-pink .screen a:hover, .use-pink .screen a:visited {
+  color: #c43d5c;
+}
+
+.use-pink .contact-row {
+  border-color: #c43d5c;
+}
+
+.use-blue {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#0b6772), to(#d34f3c));
+  background-image: linear-gradient(to bottom right, #0b6772, #d34f3c);
+}
+
+.use-blue .screen h1, .use-blue .screen h3, .use-blue .screen p, .use-blue .screen a, .use-blue .screen a:hover, .use-blue .screen a:visited {
+  color: #0b6772;
+}
+
+.use-blue .contact-row {
+  border-color: #0b6772;
 }
 
 body {
@@ -72,6 +103,16 @@ body {
   border-radius: 2rem;
 }
 
+.contact-row {
+  margin: .5rem 0 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 3px dashed;
+}
+
+.contact-row a {
+  margin-right: .5rem;
+}
+
 .navigation {
   color: #171d1d;
   font-weight: bold;
@@ -86,11 +127,12 @@ body {
 
 .navigation h3 span {
   border-bottom: 3px solid rgba(0, 0, 0, 0);
-  padding-bottom: .5rem;
+  padding-bottom: .25rem;
 }
 
 .navigation h3:hover span {
   border-color: #171d1d;
+  border-bottom-style: dashed;
 }
 
 .navigation h3::before {

@@ -16,21 +16,24 @@ class View {
     }
 
     printTagArray(contentIndex) {
-        const tagArray = this.content[contentIndex];
-        let currentTagIndex = 0;
-
-        const printNextTag = () => {
-            this.printTag(tagArray[currentTagIndex]).then(() => {
-                currentTagIndex++;
-                if(tagArray.length > currentTagIndex) {
-                    printNextTag();
-                } else {
-                    document.querySelector('.navigation').classList.remove('disabled');
-                }
-            })
-        }
-
-        printNextTag();
+        return new Promise(resolve => {
+            const tagArray = this.content[contentIndex];
+            let currentTagIndex = 0;
+    
+            const printNextTag = () => {
+                this.printTag(tagArray[currentTagIndex]).then(() => {
+                    currentTagIndex++;
+                    if(tagArray.length > currentTagIndex) {
+                        printNextTag();
+                    } else {
+                        document.querySelector('.navigation').classList.remove('disabled');
+                        resolve();
+                    }
+                })
+            }
+    
+            printNextTag();
+        });
     }
 
     printTag(tag) {

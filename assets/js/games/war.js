@@ -1,0 +1,9 @@
+class War {
+    constructor() {
+
+    }
+
+    start() {
+        
+    }
+}

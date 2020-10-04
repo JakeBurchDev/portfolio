@@ -41,11 +41,11 @@ a {
   background-position: 0% 0%;
 }
 
-.use-orange .screen h1, .use-orange .screen h3, .use-orange .screen p, .use-orange .screen a, .use-orange .screen a:visited {
+.use-orange .screen h1, .use-orange .screen h3, .use-orange .screen p, .use-orange .screen a, .use-orange .screen a:visited, .use-orange .screen .game-board {
   color: #d34f3c;
 }
 
-.use-orange .screen a:hover, .use-orange .screen .prompt-option:hover {
+.use-orange .screen a:hover, .use-orange .screen .prompt-option:hover, .use-orange .screen .game-board span:hover {
   color: #c43d5c;
 }
 
@@ -57,11 +57,11 @@ a {
   background-position: 50% 50%;
 }
 
-.use-pink .screen h1, .use-pink .screen h3, .use-pink .screen p, .use-pink .screen a, .use-pink .screen a:visited {
+.use-pink .screen h1, .use-pink .screen h3, .use-pink .screen p, .use-pink .screen a, .use-pink .screen a:visited, .use-pink .screen .game-board {
   color: #c43d5c;
 }
 
-.use-pink .screen a:hover, .use-pink .screen .prompt-option:hover {
+.use-pink .screen a:hover, .use-pink .screen .prompt-option:hover, .use-pink .screen .game-board span:hover {
   color: #0b6772;
 }
 
@@ -73,11 +73,11 @@ a {
   background-position: 100% 100%;
 }
 
-.use-blue .screen h1, .use-blue .screen h3, .use-blue .screen p, .use-blue .screen a, .use-blue .screen a:visited {
+.use-blue .screen h1, .use-blue .screen h3, .use-blue .screen p, .use-blue .screen a, .use-blue .screen a:visited, .use-blue .screen .game-board {
   color: #0b6772;
 }
 
-.use-blue .screen a:hover, .use-blue .screen .prompt-option:hover {
+.use-blue .screen a:hover, .use-blue .screen .prompt-option:hover, .use-blue .screen .game-board span:hover {
   color: #d34f3c;
 }
 
@@ -179,6 +179,15 @@ body {
 
 .prompt-option {
   cursor: pointer;
+}
+
+.game-board {
+  cursor: pointer;
+}
+
+.game-board span {
+  padding: .5rem;
+  display: inline-block;
 }
 
 @media (max-aspect-ratio: 2 / 2) {

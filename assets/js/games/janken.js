@@ -1,0 +1,9 @@
+class Janken {
+    constructor() {
+
+    }
+
+    start() {
+        
+    }
+}

@@ -48,9 +48,13 @@ const views = {
         [[
             new Tag('h3', 'Shall we play a game?'),
             new Tag('p', 'Tic-Tac-Toe', 'prompt-option game-tic-tac-toe'),
-            new Tag('p', 'Janken', 'prompt-option game-tic-tac-toe'),
+            new Tag('p', 'Janken', 'prompt-option game-janken'),
             new Tag('p', 'Global Thermonuclear War', 'prompt-option game-war'),
             new Tag('div', '', 'game-container'),
+        ],
+        [
+            new Tag('h3', 'Tic Tac Toe!'),
+            new Tag('p', 'You be x.')
         ]]
     )
 };

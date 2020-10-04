@@ -46,11 +46,11 @@ a {
     background-position: 0% 0%;
 
     .screen {
-        h1, h3, p, a, a:visited {
+        h1, h3, p, a, a:visited, .game-board {
             color: $orange;
         }
 
-        a:hover, .prompt-option:hover {
+        a:hover, .prompt-option:hover, .game-board span:hover {
             color: $pink;
         }
     }
@@ -64,11 +64,11 @@ a {
     background-position: 50% 50%;
     
     .screen {
-        h1, h3, p, a, a:visited {
+        h1, h3, p, a, a:visited, .game-board {
             color: $pink;
         }
 
-        a:hover, .prompt-option:hover {
+        a:hover, .prompt-option:hover, .game-board span:hover {
             color: $blue;
         }
     }
@@ -82,11 +82,11 @@ a {
     background-position: 100% 100%;
 
     .screen {
-        h1, h3, p, a, a:visited {
+        h1, h3, p, a, a:visited, .game-board {
             color: $blue;
         }
 
-        a:hover, .prompt-option:hover {
+        a:hover, .prompt-option:hover, .game-board span:hover {
             color: $orange;
         }
     }
@@ -170,6 +170,15 @@ body {
 
 .prompt-option {
     cursor: pointer;
+}
+
+.game-board {
+    cursor: pointer;
+
+    span {
+        padding: .5rem;
+        display: inline-block;
+    }
 }
 
 @media (max-aspect-ratio: 2/2) {

@@ -3,9 +3,12 @@ views.introduction.display();
 document.addEventListener('click', event => {
     // pretty ugly, but this way I can switch instead of doing endless if/else
     event.target.classList.forEach(targetClass => {
-        switch(targetClass) {
-            case 'game-war':
-                console.log('hi');
+        if([
+            'game-tic-tac-toe', 
+            'game-janken', 
+            'game-war'
+        ].includes(targetClass)) {
+            Game.Init(targetClass);
         }
     });
 });

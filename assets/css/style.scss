@@ -149,6 +149,11 @@ body {
     }
 }
 
+.prompt-option {
+    display: block;
+    cursor: pointer;
+}
+
 @media (max-aspect-ratio: 2/2) {
     body {
         align-items: flex-start;
@@ -162,9 +167,5 @@ body {
         margin: 2rem;
         width: 75vw;
         height: 65vh;
-    }
-
-    .navigation {
-        
     }
   }

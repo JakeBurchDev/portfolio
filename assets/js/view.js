@@ -34,6 +34,7 @@ class View {
             const characters = tag.content.split('');
             const tagElement = document.createElement(tag.type);
     
+            tagElement.className = tag.classes;
             screenContent.appendChild(tagElement);
     
             let charactersIndex = 0;
@@ -52,8 +53,9 @@ class View {
 }
 
 class Tag {
-    constructor(type, content) {
+    constructor(type, content, classes) {
         this.type = type;
         this.content = content;
+        this.classes = classes ?? '';
     }
 }

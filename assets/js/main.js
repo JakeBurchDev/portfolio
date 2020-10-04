@@ -21,10 +21,7 @@ const views = {
         'work',
         'pink',
         [
-            new Tag(
-                'h3', 
-                `Ascensus`
-            ),
+            new Tag('h3', 'Ascensus'),
             new Tag(
                 'p',
                 `At Ascensus, I contribute to the maintenance and development 
@@ -41,7 +38,7 @@ const views = {
                 'p',
                 `At Butler University, I teach a Full Stack Web Development bootcamp 
                 in which students learn cutting edge web development technologies
-                such as ES6 Javascript, React, MongoDB, Express.js, Node.JS, MySQL, and more.`
+                such as ES6 Javascript, React, MongoDB, Express, Node, MySQL, and more.`
             )
         ]
     ),
@@ -49,10 +46,11 @@ const views = {
         'mystery',
         'blue',
         [
-            new Tag(
-                'p', 
-                `Oi gigi`
-            )
+            new Tag('p', `Shall we play a game?`),
+            new Tag('br', ''),
+            new Tag('br', ''),
+            new Tag('p', 'Yes', 'prompt-option game-yes'),
+            new Tag('p', 'No','prompt-option game-no')
         ]
     )
 };

@@ -153,6 +153,11 @@ body {
   content: '>';
 }
 
+.prompt-option {
+  display: block;
+  cursor: pointer;
+}
+
 @media (max-aspect-ratio: 2 / 2) {
   body {
     -webkit-box-align: start;

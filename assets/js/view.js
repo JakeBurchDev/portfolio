@@ -43,7 +43,7 @@ class View {
                     tagElement.innerHTML += characters[charactersIndex];
                     charactersIndex++;
                 }
-            }, 10);
+            }, 7);
         });
     }
 }

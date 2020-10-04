@@ -22,8 +22,26 @@ const views = {
         'pink',
         [
             new Tag(
-                'p', 
-                `Hello there!`
+                'h3', 
+                `Ascensus`
+            ),
+            new Tag(
+                'p',
+                `At Ascensus, I contribute to the maintenance and development 
+                of web and mobile applications using technologies such as 
+                Angular, .NET Core, SQL Server, and more.`
+            ),
+            new Tag('br', ''),
+            new Tag('br', ''),
+            new Tag(
+                'h3',
+                'Butler University Executive Education'
+            ),
+            new Tag(
+                'p',
+                `At Butler University, I teach a Full Stack Web Development bootcamp 
+                in which students learn cutting edge web development technologies
+                such as ES6 Javascript, React, MongoDB, Express.js, Node.JS, MySQL, and more.`
             )
         ]
     ),

@@ -87,9 +87,9 @@ body {
 }
 
 .content {
-    height: 50vh;
+    height: 65vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .screen, .navigation {
@@ -98,8 +98,8 @@ body {
 
 .screen {
     background-color: $gray;
-    height: 50vh;
-    width: 50vh;
+    height: 65vh;
+    width: 65vh;
     padding: 2rem;
     border-radius: 2rem;
 }
@@ -118,7 +118,7 @@ body {
     color: $gray;
     font-weight: bold;
     margin-left: 2rem;
-    margin-top: 2rem;
+    align-self: flex-start;
 
     h3 {
         cursor: pointer;

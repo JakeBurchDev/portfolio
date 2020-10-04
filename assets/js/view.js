@@ -1,8 +1,8 @@
 class View {
-    constructor(sectionName, colorTheme, content) {
+    constructor(sectionName, colorTheme, contentArray) {
         this.sectionName = sectionName;
         this.colorTheme = colorTheme;
-        this.content = content;
+        this.content = contentArray;
     }
 
     display() {
@@ -11,13 +11,18 @@ class View {
         document.querySelector('body').className = `use-${this.colorTheme}`;
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`[data-section="${this.sectionName}"]`).classList.add('active');
-    
+
+        this.printTagArray(0);
+    }
+
+    printTagArray(contentIndex) {
+        const tagArray = this.content[contentIndex];
         let currentTagIndex = 0;
 
         const printNextTag = () => {
-            this.printTag(this.content[currentTagIndex]).then(() => {
+            this.printTag(tagArray[currentTagIndex]).then(() => {
                 currentTagIndex++;
-                if(this.content.length > currentTagIndex) {
+                if(tagArray.length > currentTagIndex) {
                     printNextTag();
                 } else {
                     document.querySelector('.navigation').classList.remove('disabled');

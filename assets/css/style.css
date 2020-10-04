@@ -23,6 +23,14 @@ html, body, h1, h3, p, a {
   padding: 0;
 }
 
+h1, h3, p, a {
+  font-family: 'VT323', monospace;
+  -webkit-transform: scaleX(1.5);
+          transform: scaleX(1.5);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -69,6 +77,25 @@ body {
 }
 
 .navigation p {
+  cursor: pointer;
   margin-bottom: 1rem;
+}
+
+.navigation p span {
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  padding-bottom: .5rem;
+}
+
+.navigation p:hover span {
+  border-color: #171d1d;
+}
+
+.navigation p::before {
+  content: '\00a0';
+  margin-right: .5rem;
+}
+
+.navigation p.active::before {
+  content: '>';
 }
 /*# sourceMappingURL=style.css.map */

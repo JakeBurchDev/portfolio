@@ -32,6 +32,12 @@ html, body, h1, h3, p, a {
     padding: 0;
 }
 
+h1, h3, p, a {
+    font-family: 'VT323', monospace;
+    transform: scaleX(1.5);
+    transform-origin: left;
+}
+
 body {
     display: flex;
     flex-direction: row;
@@ -64,6 +70,25 @@ body {
     margin-top: 2rem;
 
     p {
+        cursor: pointer;
         margin-bottom: 1rem;
+
+        span {
+            border-bottom: 3px solid rgba(0,0,0,0);
+            padding-bottom: .5rem;
+        }
+
+        &:hover span {
+            border-color: $gray;
+        }
+
+        &::before {
+            content: '\00a0';
+            margin-right: .5rem;
+        }
+
+        &.active::before {
+            content: '>';
+        }
     }
 }

@@ -6,6 +6,7 @@ class View {
     }
 
     display() {
+        document.querySelector('.navigation').classList.add('disabled');
         document.querySelector('.screen-content').innerHTML = '';
         document.querySelector('body').className = `use-${this.colorTheme}`;
         document.querySelector('.active').classList.remove('active');
@@ -18,6 +19,8 @@ class View {
                 currentTagIndex++;
                 if(this.content.length > currentTagIndex) {
                     printNextTag();
+                } else {
+                    document.querySelector('.navigation').classList.remove('disabled');
                 }
             })
         }

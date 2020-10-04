@@ -60,9 +60,10 @@ const views = {
 views.introduction.display();
 
 document.querySelectorAll('.navigation h3').forEach(sectionLink => {
-
-sectionLink.addEventListener('click', event => {
-        const section = event.currentTarget.getAttribute('data-section');
-        views[section].display();
+    sectionLink.addEventListener('click', event => {
+        if(!document.querySelector('.navigation').classList.contains('disabled')) {
+            const section = event.currentTarget.getAttribute('data-section');
+            views[section].display();
+        }
     });
 });

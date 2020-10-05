@@ -6,8 +6,6 @@ class Game {
     static Init(game) {
         document.querySelector('.screen-content').innerHTML = '';
 
-        console.log(game);
-
         switch(game) {
             case 'game-tic-tac-toe':
                 this.currentGame = new TicTacToe();
@@ -20,7 +18,6 @@ class Game {
                 break;
         }
 
-        console.log(this.currentGame);
         this.currentGame.start();
     }
 }

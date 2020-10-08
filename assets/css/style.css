@@ -25,7 +25,6 @@ h1, h3, p, a {
           transform-origin: left;
   color: #171d1d;
   margin-bottom: .5rem;
-  width: 65%;
 }
 
 p, a {
@@ -113,6 +112,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  max-width: 35rem;
   background-color: #171d1d;
   padding: 2rem;
   border-radius: 2rem;
@@ -132,6 +132,10 @@ body {
 
 .screen-content p {
   font-size: 1rem;
+}
+
+.screen h1, .screen h3, .screen p, .screen a {
+  width: 65%;
 }
 
 .contact-row {
@@ -190,7 +194,7 @@ body {
   display: inline-block;
 }
 
-@media (max-aspect-ratio: 2 / 2) {
+@media (max-aspect-ratio: 7 / 5) {
   body {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -204,9 +208,30 @@ body {
     height: 100%;
   }
   .screen {
-    margin: 2rem;
-    width: 75vw;
+    max-width: none;
+    height: 50vh;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+  }
+}
+
+@media (max-aspect-ratio: 1 / 1) {
+  .content {
+    padding: 2rem;
+  }
+  .screen {
     height: 65vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .screen-content {
+    overflow-y: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

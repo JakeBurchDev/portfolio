@@ -29,7 +29,6 @@ h1, h3, p, a {
     transform-origin: left;
     color: $gray;
     margin-bottom: .5rem;
-    width: 65%;
 }
 
 p, a {
@@ -111,6 +110,7 @@ body {
 
 .screen {
     flex: 1;
+    max-width: 35rem;
     background-color: $gray;
     padding: 2rem;
     border-radius: 2rem;
@@ -123,6 +123,10 @@ body {
         p {
             font-size: 1rem;
         }
+    }
+
+    h1, h3, p, a {
+        width: 65%;
     }
 }
 
@@ -181,7 +185,7 @@ body {
     }
 }
 
-@media (max-aspect-ratio: 2/2) {
+@media (max-aspect-ratio: 7/5) {
     body {
         align-items: flex-start;
     }
@@ -191,8 +195,24 @@ body {
     }
 
     .screen {
-        margin: 2rem;
-        width: 75vw;
-        height: 65vh;
+        max-width: none;
+        height: 50vh;
+        flex: none;
     }
-  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .content {
+        padding: 2rem;
+    }
+
+    .screen {
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+
+        &-content {
+            overflow-y: auto;
+        }
+    }
+}

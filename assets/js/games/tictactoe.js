@@ -63,7 +63,7 @@ class TicTacToe {
     }
 
     endGame(playerWins) {
-        views.mystery.gameManager.gameOver(playerWins);
+        GameManager.gameOver(playerWins);
     }
 
     markChoice(row, column, mark) {

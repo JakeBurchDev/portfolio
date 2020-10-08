@@ -1,27 +1,25 @@
 class GameManager {
-    constructor() {
-        this.currentGame = {};
-    }
+    static currentGame = {}
 
-    init(game) {
+    static init(game) {
         document.querySelector('.screen-content').innerHTML = '';
 
         switch(game) {
             case 'game-tic-tac-toe':
-                this.currentGame = new TicTacToe();
+                GameManager.currentGame = new TicTacToe();
                 break;
             case 'game-janken':
-                this.currentGame = new Janken();
+                GameManager.currentGame = new Janken();
                 break;
             case 'game-war':
-                this.currentGame = new War();
+                GameManager.currentGame = new War();
                 break;
         }
 
-        this.currentGame.start();
+        GameManager.currentGame.start();
     }
 
-    gameOver(playerWins) {
+    static gameOver(playerWins) {
         views.mystery.printTagArray(playerWins ? 1 : 2);
         setTimeout(() => {
             document.querySelector('.screen-content').innerHTML = '';

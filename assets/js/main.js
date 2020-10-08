@@ -8,8 +8,7 @@ document.addEventListener('click', event => {
             'game-janken', 
             'game-war'
         ].includes(targetClass)) {
-            views.mystery.gameManager = new GameManager();
-            views.mystery.gameManager.init(targetClass);
+            GameManager.init(targetClass);
         }
     });
 });

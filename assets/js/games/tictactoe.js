@@ -8,7 +8,7 @@ class TicTacToe {
     }
 
     start() {
-        views.mystery.printTagArray(1).then(() => {
+        views.mystery.printTagArray(3).then(() => {
             this.createBoard();
             this.setBoard();
         });
@@ -45,17 +45,25 @@ class TicTacToe {
                     this.markChoice(row, column, 'x');
 
                     this.checkForWin().then(result => {
-                        if(result === 'player wins') {
-
-                        } else if(result === 'computer wins') {
-
+                        if(result.gameOver) {
+                            this.endGame(result.playerWins);
                         } else {
-                            this.takeComputerTurn();
+                            this.takeComputerTurn().then(() => {
+                                this.checkForWin().then(result => {
+                                    if(result.gameOver) {
+                                        this.endGame(result.playerWins);
+                                    }
+                                }); 
+                            });
                         }
                     });
                 }
             });
         });
+    }
+
+    endGame(playerWins) {
+        views.mystery.gameManager.gameOver(playerWins);
     }
 
     markChoice(row, column, mark) {
@@ -65,114 +73,68 @@ class TicTacToe {
 
     checkForWin() {
         return new Promise(resolve => {
-            // row one
-            if(testCells(this.board[0], 'x')) {
-                console.log('player win')
-            }
-
-            if(testCells(this.board[0], 'o')) {
-                console.log('computer win')
-            }
-
-            // row two
-            if(testCells(this.board[1], 'x')) {
-                console.log('player win')
-            }
-
-            if(testCells(this.board[1], 'o')) {
-                console.log('computer win')
-            }
-
-            // row three
-            if(testCells(this.board[2], 'x')) {
-                console.log('player win')
-            }
-
-            if(testCells(this.board[2], 'o')) {
-                console.log('computer win')
-            }
-
-            // column one
             const columnOneArray = [this.board[0][0], this.board[1][0], this.board[2][0]];
-            if(testCells(columnOneArray, 'x')) {
-                console.log('player win')
-            }
-
-            if(testCells(columnOneArray, 'o')) {
-                console.log('computer win')
-            }
-
-            // column two
             const columnTwoArray = [this.board[0][1], this.board[1][1], this.board[2][1]];
-            if(testCells(columnTwoArray, 'x')) {
-                console.log('player win')
-            }
-
-            if(testCells(columnTwoArray, 'o')) {
-                console.log('computer win')
-            }
-
-            // column three
             const columnThreeArray = [this.board[0][2], this.board[1][2], this.board[2][2]];
-            if(testCells(columnThreeArray, 'x')) {
-                console.log('player win')
-            }
-
-            if(testCells(columnThreeArray, 'o')) {
-                console.log('computer win')
-            }
-
-            // diagonal one
             const diagonalOneArray = [this.board[0][0], this.board[1][1], this.board[2][2]];
-            if(testCells(diagonalOneArray, 'x')) {
-                console.log('player win')
-            }
-
-            if(testCells(diagonalOneArray, 'o')) {
-                console.log('computer win')
-            }
-
-            // diagonal two
             const diagonalTwoArray = [this.board[2][0], this.board[1][1], this.board[0][2]];
-            if(testCells(diagonalTwoArray, 'x')) {
-                console.log('player win')
-            }
 
-            if(testCells(diagonalTwoArray, 'o')) {
-                console.log('computer win')
-            }
+            const winPatterns = [
+                this.board[0],
+                this.board[1],
+                this.board[2],
+                columnOneArray,
+                columnTwoArray,
+                columnThreeArray,
+                diagonalOneArray,
+                diagonalTwoArray
+            ];
 
+            const result = {
+                gameOver: false,
+                playerWins: false
+            };
+
+            winPatterns.forEach(pattern => {
+                const playerWinsPattern = testCells(pattern, 'x');
+                const computerWinsPattern = testCells(pattern, 'o');
+
+                if(playerWinsPattern || computerWinsPattern) result.gameOver = true;
+                if(playerWinsPattern) result.playerWins = true;
+            });
+            
+            resolve(result);
 
             function testCells(cellArray, mark) {
                 return cellArray.filter(cell => cell === mark).length === 3;
             }
-
-            resolve();
         });
     }
 
     takeComputerTurn() {
-        const getSelection = () => {
-            const selection = Math.floor(Math.random() * 10);
-
-            if(selection < 3) {
-                trySelect(0, selection);
-            } else if(selection < 6) {
-                trySelect(1, selection - 3);
-            } else {
-                trySelect(2, selection - 6);
+        return new Promise(resolve => {
+            const getSelection = () => {
+                const selection = Math.floor(Math.random() * 10);
+    
+                if(selection < 3) {
+                    trySelect(0, selection);
+                } else if(selection < 6) {
+                    trySelect(1, selection - 3);
+                } else {
+                    trySelect(2, selection - 6);
+                }
             }
-        }
-
-        const trySelect = (row, selection) => {
-            console.log(row, selection);
-            if(this.board[row][selection] === '_') {
-                this.markChoice(row, selection, 'o');
-            } else {
-                getSelection();
+    
+            const trySelect = (row, selection) => {
+                if(this.board[row][selection] === '_') {
+                    this.markChoice(row, selection, 'o');
+                    resolve();
+                } else {
+                    getSelection();
+                }
             }
-        }
-
-        getSelection();
+    
+            getSelection();
+        });
     }
 }

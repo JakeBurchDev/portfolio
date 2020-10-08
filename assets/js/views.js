@@ -53,6 +53,14 @@ const views = {
             new Tag('div', '', 'game-container'),
         ],
         [
+            new Tag('h3', 'You are victorious!'),
+            new Tag('p', 'Must have cheated.')
+        ],
+        [
+            new Tag('h3', 'You have been defeated!'),
+            new Tag('p', 'How embarassing for you.')
+        ],
+        [
             new Tag('h3', 'Tic Tac Toe!'),
             new Tag('p', 'You be x.')
         ]]

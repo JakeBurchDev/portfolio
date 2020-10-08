@@ -1,9 +1,9 @@
-class Game {
+class GameManager {
     constructor() {
         this.currentGame = {};
     }
 
-    static Init(game) {
+    init(game) {
         document.querySelector('.screen-content').innerHTML = '';
 
         switch(game) {
@@ -19,5 +19,13 @@ class Game {
         }
 
         this.currentGame.start();
+    }
+
+    gameOver(playerWins) {
+        views.mystery.printTagArray(playerWins ? 1 : 2);
+        setTimeout(() => {
+            document.querySelector('.screen-content').innerHTML = '';
+            views.mystery.printTagArray(0);
+        }, 3000);
     }
 }

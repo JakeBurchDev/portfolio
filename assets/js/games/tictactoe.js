@@ -8,7 +8,7 @@ class TicTacToe {
     }
 
     start() {
-        views.mystery.printTagArray(3).then(() => {
+        views.mystery.printViewTagArray(3).then(() => {
             this.createBoard();
             this.setBoard();
         });

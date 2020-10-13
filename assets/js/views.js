@@ -63,6 +63,13 @@ const views = {
         [
             new Tag('h3', 'Tic Tac Toe!'),
             new Tag('p', 'You be x.')
+        ],
+        [
+            new Tag('h3', 'Best two out of three!'),
+            new Tag('p', 'Choose.'),
+            new Tag('p', 'Rock', 'prompt-option janken-option rock'),
+            new Tag('p', 'Paper', 'prompt-option janken-option paper'),
+            new Tag('p', 'Scissors', 'prompt-option janken-option scissors'),
         ]]
     )
 };

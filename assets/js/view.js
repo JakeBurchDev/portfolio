@@ -6,22 +6,28 @@ class View {
     }
 
     display() {
+        View.clearScreen();
         document.querySelector('.navigation').classList.add('disabled');
-        document.querySelector('.screen-content').innerHTML = '';
         document.querySelector('body').className = `use-${this.colorTheme}`;
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`[data-section="${this.sectionName}"]`).classList.add('active');
 
-        this.printTagArray(0);
+        this.printViewTagArray(0);
     }
 
-    printTagArray(contentIndex) {
+    printViewTagArray(contentIndex) {
         return new Promise(resolve => {
             const tagArray = this.content[contentIndex];
+            View.printTagArray(tagArray).then(() => resolve());
+        });
+    }
+
+    static printTagArray(tagArray) {
+        return new Promise(resolve => {
             let currentTagIndex = 0;
     
             const printNextTag = () => {
-                this.printTag(tagArray[currentTagIndex]).then(() => {
+                View.printTag(tagArray[currentTagIndex]).then(() => {
                     currentTagIndex++;
                     if(tagArray.length > currentTagIndex) {
                         printNextTag();
@@ -36,7 +42,7 @@ class View {
         });
     }
 
-    printTag(tag) {
+    static printTag(tag) {
         return new Promise(resolve => {
             const screenContent = document.querySelector('.screen-content');
             const characters = tag.content.split('');
@@ -57,6 +63,10 @@ class View {
                 }
             }, 7);
         });
+    }
+
+    static clearScreen() {
+        document.querySelector('.screen-content').innerHTML = '';
     }
 }
 

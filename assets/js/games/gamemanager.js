@@ -2,7 +2,7 @@ class GameManager {
     static currentGame = {}
 
     static init(game) {
-        document.querySelector('.screen-content').innerHTML = '';
+        View.clearScreen();
 
         switch(game) {
             case 'game-tic-tac-toe':
@@ -20,10 +20,10 @@ class GameManager {
     }
 
     static gameOver(playerWins) {
-        views.mystery.printTagArray(playerWins ? 1 : 2);
+        views.mystery.printViewTagArray(playerWins ? 1 : 2);
         setTimeout(() => {
-            document.querySelector('.screen-content').innerHTML = '';
-            views.mystery.printTagArray(0);
+            View.clearScreen();
+            views.mystery.printViewTagArray(0);
         }, 3000);
     }
 }

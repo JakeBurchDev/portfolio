@@ -54,7 +54,7 @@ a {
         }
     }
 
-    .contact-row {
+    .contact-row, .navigation h3:not(.active):hover span {
         border-color: $orange;
     }
 }
@@ -72,7 +72,7 @@ a {
         }
     }
 
-    .contact-row {
+    .contact-row, .navigation h3:not(.active):hover span {
         border-color: $pink;
     }
 }
@@ -90,7 +90,7 @@ a {
         }
     }
 
-    .contact-row {
+    .contact-row, .navigation h3:not(.active):hover span {
         border-color: $blue;
     }
 }
@@ -110,7 +110,10 @@ body {
 
 .screen {
     flex: 1;
-    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 50rem;
     background-color: $gray;
     padding: 2rem;
     border-radius: 2rem;
@@ -142,16 +145,17 @@ body {
 }
 
 .navigation {
-    width: 10rem;
-    color: $gray;
-    font-weight: bold;
-    margin-left: 2rem;
     align-self: flex-start;
-    margin-top: 2rem;
+    padding-top: 1rem;
 
     h3 {
-        cursor: pointer;
-        margin-bottom: 1rem;
+        &:not(.active) {
+            cursor: pointer;
+        }
+        
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
 
         span {
             border-bottom: 3px solid rgba(0,0,0,0);
@@ -159,11 +163,12 @@ body {
         }
 
         &:hover span {
-            border-color: $gray;
             border-bottom-style: dashed;
         }
 
         &::before {
+            //animation: blink 1s linear alternate infinite;
+            animation: blink-animation 1.5s steps(2, start) infinite;
             content: '\00a0';
             margin-right: .5rem;
         }
@@ -187,17 +192,23 @@ body {
     }
 }
 
+@keyframes blink {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
 @media (max-aspect-ratio: 5/7) {
     .content {
-        flex-direction: column;
         padding: 2rem;
 
         .screen {
             padding: 1.5rem;
-        }
-
-        .navigation {
-            width: auto;
         }
     }
 }

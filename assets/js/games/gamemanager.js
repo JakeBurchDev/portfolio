@@ -1,6 +1,4 @@
 class GameManager {
-    static currentGame = {}
-
     static init(game) {
         View.clearScreen();
 

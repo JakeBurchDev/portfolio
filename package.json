@@ -1,0 +1,23 @@
+{
+  "name": "jake-burch",
+  "version": "1.0.0",
+  "description": "My portfolio",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "build": "babel assets/js -d assets/js/es5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeBurchDev/portfolio.git"
+  },
+  "author": "Jake Burch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JakeBurchDev/portfolio/issues"
+  },
+  "homepage": "https://github.com/JakeBurchDev/portfolio#readme"
+}

@@ -1,2 +1,5 @@
+node_modules
+package-lock.json
 assets/css/style.css.map
 assets/css/style.css
+assets/js/es5

@@ -74,6 +74,6 @@ class Tag {
     constructor(type, content, classes) {
         this.type = type;
         this.content = content;
-        this.classes = classes ?? '';
+        this.classes = classes != null ? classes : '';
     }
 }

@@ -7,7 +7,6 @@ class View {
 
     display() {
         View.clearScreen();
-        document.querySelector('.navigation').classList.add('disabled');
         document.querySelector('body').className = `use-${this.colorTheme}`;
         document.querySelector('.active').classList.remove('active');
         document.querySelector(`[data-section="${this.sectionName}"]`).classList.add('active');
@@ -23,6 +22,7 @@ class View {
     }
 
     static printTagArray(tagArray) {
+        document.querySelector('.navigation').classList.add('disabled');
         return new Promise(resolve => {
             let currentTagIndex = 0;
     
